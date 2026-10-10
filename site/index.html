@@ -27,9 +27,9 @@
   .card{background:var(--navy2);border:1px solid var(--line);border-radius:14px;padding:20px}
   .card h3{margin:0 0 8px;font-size:16px}
   .card p{margin:0;color:var(--muted);font-size:14px}
-  ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-  ul.clean li{padding-left:26px;position:relative;color:var(--muted)}
-  ul.clean li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:3px;
+  ul.clean,ol.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.clean li,ol.clean li{padding-left:26px;position:relative;color:var(--muted)}
+  ul.clean li::before,ol.clean li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:3px;
     background:linear-gradient(135deg,var(--violet),var(--violet2))}
   footer{padding:40px 0 72px;color:var(--muted);font-size:14px}
   .cta{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:12px 22px;
@@ -43,7 +43,9 @@
   <h1>Dev Kit<br/><span>Developer tools, anywhere.</span></h1>
   <p class="lead">An offline-first toolbox for developers, students, and API tinkerers.
   Format data, encode and generate, test regex, and send real REST requests — no account, no server.</p>
-  <a class="cta" href="#tools">See the tools</a>
+  <a class="cta" href="https://github.com/ProjectHub-fie/Devkit/releases/latest">Download APK</a>
+  <a class="cta" style="background:transparent;border:1px solid var(--line);color:var(--text)"
+     href="#tools">See the tools</a>
 </header>
 
 <section class="wrap" id="tools">
@@ -70,9 +72,21 @@
   <p class="note">Read the full <a href="./privacy.html">privacy policy</a>.</p>
 </section>
 
+<section class="wrap">
+  <h2>Install it</h2>
+  <ol class="clean">
+    <li>Download the APK from the latest
+        <a href="https://github.com/ProjectHub-fie/Devkit/releases/latest">GitHub release</a>.</li>
+    <li>Open the file on your phone and allow installs from this source when Android asks.</li>
+    <li>Tap Install, then open <strong>Dev Kit</strong> from your app drawer.</li>
+  </ol>
+  <p class="note">Android 8.0 (API 26) or newer. The current download is a debug-signed build for
+  sideloading; it installs and runs normally but is not a Google Play release.</p>
+</section>
+
 <footer class="wrap">
-  <p>Dev Kit is not yet published to Google Play. This page is a static project page hosted on
-  Cloudflare Pages; it is documentation, not a download or a store listing.</p>
+  <p>Dev Kit is not published to Google Play. The APK is distributed through GitHub Releases,
+  and this page is a static project page hosted on Cloudflare Pages.</p>
   <p><a href="https://github.com/ProjectHub-fie/Devkit">Source on GitHub</a></p>
 </footer>
 </body>

@@ -81,7 +81,50 @@ app/src/main/java/com/devkit/app/
 
 ---
 
-## Build and run
+## Install on your phone (no Android Studio)
+
+Dev Kit is an app you install and use on a phone or tablet — Android Studio is
+only needed if you want to build it yourself.
+
+### 1. Download the APK
+Get the latest APK from the **Releases** page:
+
+<https://github.com/ProjectHub-fie/Devkit/releases/latest>
+
+Two builds are attached:
+
+| File | Size | Notes |
+| --- | --- | --- |
+| `devkit-1.0.0-release.apk` | ~1.9 MB | **Recommended.** Minified, signed release build. |
+| `devkit-1.0.0-debug.apk` | ~18 MB | Debug build, useful for troubleshooting. |
+
+The latest automated build is also attached to every successful
+[CI run](https://github.com/ProjectHub-fie/Devkit/actions) as the
+`devkit-debug-apk` artifact.
+
+### 2. Install it
+1. On the phone, open the downloaded `devkit-*.apk` file.
+2. Android will ask to allow installs from this source — allow **Install unknown
+   apps** for your browser or file manager, then tap **Install**.
+3. Open **Dev Kit** from your app drawer.
+
+If you prefer a computer and a USB cable:
+
+```bash
+adb install -r devkit-1.0.0-release.apk
+```
+
+> The release APK is signed with the Dev Kit project key (see
+> [Release signing](#release-signing-not-committed)). It is distributed through
+> GitHub Releases for sideloading, **not** through Google Play. The debug APK uses
+> a different signing key, so uninstall one before installing the other.
+
+**Requirements:** Android 8.0 (API 26) or newer. All local tools work with no
+internet connection.
+
+---
+
+## Build from source (developers)
 
 ### Requirements
 - Android Studio (latest stable) **or** JDK 17 + Android SDK (platform 34, build-tools 34)
@@ -106,7 +149,8 @@ emulator or device.
 
 ### Release signing (not committed)
 
-Create `keystore.properties` in the project root (already git-ignored):
+The `release` build type picks up a signing config automatically when a
+git-ignored `keystore.properties` exists in the project root. Create one:
 
 ```properties
 storeFile=/absolute/path/to/release.jks
@@ -115,14 +159,22 @@ keyAlias=devkit
 keyPassword=********
 ```
 
-Then build a signed release bundle:
+Generate a keystore with the JDK if you do not have one, then build:
 
 ```bash
-./gradlew bundleRelease
+keytool -genkeypair -v -keystore release.jks -alias devkit \
+  -keyalg RSA -keysize 2048 -validity 10000
+
+./gradlew assembleRelease   # -> app/build/outputs/apk/release/app-release.apk
+./gradlew bundleRelease     # -> app/build/outputs/bundle/release/app-release.aab (Play)
 ```
 
+Without `keystore.properties`, `assembleRelease` still succeeds but the APK is
+left unsigned and cannot be installed — the app installs from the debug build
+during development.
+
 **Never commit keystores, passwords, or service keys.** The `.gitignore` blocks
-`*.jks`, `*.keystore`, and `local.properties`.
+`*.jks`, `*.keystore`, `keystore.properties`, and `local.properties`.
 
 ---
 
