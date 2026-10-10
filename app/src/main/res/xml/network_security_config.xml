@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dev Kit is offline-first. Cleartext (HTTP) traffic is disabled by default;
+     developers who need to test a plain-HTTP endpoint must opt in within
+     Settings, which patches this policy at runtime is NOT done - instead the
+     user is warned and the request is blocked. See ApiClient. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

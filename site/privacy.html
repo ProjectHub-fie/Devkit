@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dev Kit — Privacy Policy</title>
+<style>
+ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+   background:#0f1220;color:#e8e9f3;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:56px 24px 80px}
+ h1{font-size:30px;margin:0 0 24px}
+ h2{font-size:20px;margin:36px 0 12px;color:#9b8cff}
+ p,li{color:#c6c9dc}
+ a{color:#9b8cff}
+ ul{padding-left:22px}
+</style></head>
+<body><div class="wrap">
+<h1>Privacy Policy — Dev Kit</h1>
+
+<p>_Last updated: 2026-10-10_</p>
+
+<p>Dev Kit is an offline-first developer toolbox for Android. This policy</p>
+<p>describes what the app actually does with your data. It is written to match the</p>
+<p>behaviour of the code in this repository.</p>
+
+<h2>Summary</h2>
+
+<ul>
+<li>Dev Kit does **not** require an account.</li>
+<li>Dev Kit does **not** run a backend server. There is no Dev Kit cloud service in</li>
+</ul>
+<p>  this version.</p>
+<ul>
+<li>All local tools (formatting, encoding, generation, regex, snippets, favorites,</li>
+</ul>
+<p>  history, settings) process data **entirely on your device**.</p>
+<ul>
+<li>The API Tester sends the requests **you** create directly from your device to</li>
+</ul>
+<p>  the URL you enter. Dev Kit is not an intermediary.</p>
+
+<h2>What is stored on your device</h2>
+
+<p>Dev Kit stores the following locally, using Android Room and DataStore:</p>
+
+<ul>
+<li>Tool usage history and recently used tools.</li>
+<li>Favorite and pinned tools.</li>
+<li>Your saved API requests, collections, and environment variables.</li>
+<li>Request history (method, **redacted** URL, status code, duration, time).</li>
+<li>Code snippets you create.</li>
+<li>App settings (theme, accent, JSON indentation, default timeout, retention).</li>
+</ul>
+
+<p>You can delete any of this at any time from **Settings → Clear history** and</p>
+<p>**Settings → Clear all data**. Uninstalling the app removes all locally stored</p>
+<p>data.</p>
+
+<h2>What leaves your device</h2>
+
+<p>Only what you explicitly send:</p>
+
+<ul>
+<li>**API Tester requests.** When you press Send, the HTTP request (method, URL,</li>
+</ul>
+<p>  query parameters, headers, and body you entered) is transmitted directly to</p>
+<p>  the server at the URL you specified. That server, not Dev Kit, then handles</p>
+<p>  your data under its own privacy policy. Do not send credentials you do not</p>
+<p>  trust to the destination you are contacting.</p>
+<ul>
+<li>**Copy / Share.** If you tap Copy or Share, the Android system shares the</li>
+</ul>
+<p>  text with the app you choose. Dev Kit does not choose the destination.</p>
+
+<p>Dev Kit does **not** contact any analytics, advertising, or crash-reporting</p>
+<p>service in this version. If that changes, this policy and the app&#x27;s data-safety</p>
+<p>disclosure will be updated before release, and consent will be handled where</p>
+<p>required.</p>
+
+<h2>Sensitive data handling</h2>
+
+<p>This applies to data you enter (such as tokens) and data you receive:</p>
+
+<ul>
+<li>Authorization headers, proxy authorization, cookies, API-key headers, and</li>
+</ul>
+<p>  common token query parameters are **redacted** before being written to history,</p>
+<p>  shown in previews, or included in exports. Redaction is applied by default.</p>
+<ul>
+<li>Exports redact sensitive headers and secret-looking bodies unless you</li>
+</ul>
+<p>  explicitly opt in to include them.</p>
+<ul>
+<li>TLS certificate validation is **never** disabled, and cleartext HTTP traffic is</li>
+</ul>
+<p>  blocked, so requests use encrypted connections where the server supports it.</p>
+<ul>
+<li>API responses are treated as untrusted text. Dev Kit does not execute</li>
+</ul>
+<p>  JavaScript or render received HTML as live markup.</p>
+<ul>
+<li>No API keys, tokens, or secrets are embedded in the application source.</li>
+</ul>
+
+<h2>Permissions</h2>
+
+<ul>
+<li>`INTERNET` and `ACCESS_NETWORK_STATE` — used only by the API Tester and by the</li>
+</ul>
+<p>  offline-indicator. Offline tools never make a network request.</p>
+
+<h2>Children</h2>
+
+<p>Dev Kit is a developer tool and is not directed at children.</p>
+
+<h2>Data safety (Google Play data safety section)</h2>
+
+<p>For the data-safety form: Dev Kit collects no data for the developer and shares</p>
+<p>no data with third parties in this version. User-entered request content is</p>
+<p>transmitted only by user action to the user&#x27;s chosen endpoint. All app data is</p>
+<p>stored locally and can be deleted by the user.</p>
+
+<h2>Changes</h2>
+
+<p>Material changes to this policy will be reflected in the app and repository</p>
+<p>history.</p>
+
+<h2>Contact</h2>
+
+<p>Report privacy questions via the repository&#x27;s issue tracker or the in-app</p>
+<p>feedback option.</p>
+<p style="margin-top:40px"><a href="./index.html">&larr; Back to Dev Kit</a></p>
+</div></body></html>
