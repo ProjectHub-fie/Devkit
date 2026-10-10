@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dev Kit — Developer tools, anywhere.</title>
+<meta name="description" content="Dev Kit is an offline-first Android toolbox for developers: JSON, YAML, XML, Base64, UUID, hashes, QR codes, regex, and a real REST API client." />
+<style>
+  :root{
+    --navy:#0f1220; --navy2:#161a2e; --violet:#7c6bf2; --violet2:#9b8cff;
+    --text:#e8e9f3; --muted:#a2a6c0; --line:#252a45;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--navy);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--violet2)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--violet2);
+         border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:20px}
+  h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0 0 16px;font-weight:700}
+  h1 span{color:var(--violet2)}
+  .lead{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:640px}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:24px;margin:0 0 20px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--navy2);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.clean li{padding-left:26px;position:relative;color:var(--muted)}
+  ul.clean li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:3px;
+    background:linear-gradient(135deg,var(--violet),var(--violet2))}
+  footer{padding:40px 0 72px;color:var(--muted);font-size:14px}
+  .cta{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:12px 22px;
+       border-radius:10px;font-weight:600;margin-top:8px}
+  .note{margin-top:24px;font-size:13px;color:var(--muted);border-left:3px solid var(--violet);padding-left:14px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="badge">Android · Developer tools</div>
+  <h1>Dev Kit<br/><span>Developer tools, anywhere.</span></h1>
+  <p class="lead">An offline-first toolbox for developers, students, and API tinkerers.
+  Format data, encode and generate, test regex, and send real REST requests — no account, no server.</p>
+  <a class="cta" href="#tools">See the tools</a>
+</header>
+
+<section class="wrap" id="tools">
+  <h2>Everything runs on your device</h2>
+  <div class="grid">
+    <div class="card"><h3>JSON &amp; Data</h3><p>Formatter, validator, viewer, JSON ⇄ YAML, XML, SQL, CSV.</p></div>
+    <div class="card"><h3>Encoders &amp; Decoders</h3><p>Base64 (standard + URL-safe), URL, HTML entities, Unicode, radix, timestamps.</p></div>
+    <div class="card"><h3>Generators</h3><p>UUID v4/v7, secure random strings, passwords, hashes and HMAC, QR codes.</p></div>
+    <div class="card"><h3>Text Tools</h3><p>Word count, case converter, diff, regex tester, Markdown, colour, Lorem Ipsum, cron.</p></div>
+    <div class="card"><h3>API Tester</h3><p>A real REST client: all methods, headers, bodies, timeouts, collections, history.</p></div>
+    <div class="card"><h3>Security &amp; Inspection</h3><p>JWT decoder, hash identify/compare, URL parser, sensitive-data redaction.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Private by design</h2>
+  <ul class="clean">
+    <li>No account required, and no developer backend.</li>
+    <li>Local tools never make a network request.</li>
+    <li>API requests go straight from your device to the endpoint you enter — nothing is proxied.</li>
+    <li>Authorization headers and tokens are redacted in history, previews, and exports by default.</li>
+    <li>TLS validation is never disabled and cleartext HTTP is blocked.</li>
+  </ul>
+  <p class="note">Read the full <a href="./privacy.html">privacy policy</a>.</p>
+</section>
+
+<footer class="wrap">
+  <p>Dev Kit is not yet published to Google Play. This page is a static project page hosted on
+  Cloudflare Pages; it is documentation, not a download or a store listing.</p>
+  <p><a href="https://github.com/ProjectHub-fie/Devkit">Source on GitHub</a></p>
+</footer>
+</body>
+</html>
