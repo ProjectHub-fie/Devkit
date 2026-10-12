@@ -2,5 +2,5 @@
 <resources>
     <color name="df_navy">#FF0F1220</color>
     <color name="df_violet">#FF7C6BF2</color>
-    <color name="ic_launcher_background">#FF0F1220</color>
+    <color name="ic_launcher_background">#FFFFFFFF</color>
 </resources>
